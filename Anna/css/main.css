@@ -1,0 +1,12 @@
+h1{
+    font-size: xxx-large; font-family: "Candara Light";
+    color: steelblue}
+h4{
+   font-family: "Candara Light";font-size: x-large;color: darkcyan}
+
+p{
+    font-family: "Calibri Light"; color: rosybrown;}
+
+a:hover{ color: darkred;
+}
+a:visited{}
