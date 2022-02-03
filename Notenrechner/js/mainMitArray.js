@@ -1,32 +1,24 @@
-let n1
-let n2
-let n3
-let n4
-let n5
+let eingabeFelder = ['tfnote1','tfnote2','tfnote3','tfnote4','tfnote5','tfnote6']
+let noten = [];
 
 let summe = 0;
 let anzahlNoten = 0;
-let ergebnis;
+let ergebnis; //erechnete Durchschnitt
+let aktuelleEingabe;
 
 //refactor auf -> notenAuslesen()
 
-function tfAuslesen() {
-    n1 = parseInt(document.getElementById("tfnote1").value);
-    n2 = parseInt(document.getElementById("tfnote2").value);
-    n3 = parseInt(document.getElementById("tfnote3").value);
-    n4 = parseInt(document.getElementById("tfnote4").value);
-    n5 = parseInt(document.getElementById("tfnote5").value);
+function tfAuslesen () {
+    for (let i = 0; i < eingabeFelder.length; i = i + 1) {
 
-    console.log(n1 + ";" + n2 + ";" + n3 + ";" + n4 + ";" + n5);
+        aktuelleEingabe = parseInt(document.getElementById(eingabeFelder[i]).value);
+        eingabeUeberpruefen(aktuelleEingabe);
 
-    eingabeUeberpruefen(n1)
-    eingabeUeberpruefen(n2)
-    eingabeUeberpruefen(n3)
-    eingabeUeberpruefen(n4)
-    eingabeUeberpruefen(n5)
+    }
+//Schleife angelegt
 
+    ergebnis = summe / anzahlNoten; //Rechenschnitt zum Ergebnis
 
-    ergebnis = summe / anzahlNoten;
     document.getElementById("ausgabe").innerHTML = ergebnis;
 
     document.getElementById("ausgabe").style.color = "crimson"
@@ -38,9 +30,9 @@ function tfAuslesen() {
         if (ergebnis > 10) {
             document.getElementById("ausgabe").style.color = "blueviolet"
         }
-
     }
 }
+//Aenderung der Farbe des Ergebnisses
 
 function eingabeUeberpruefen (punkte) {
     if (isNaN(punkte)){
@@ -50,3 +42,4 @@ function eingabeUeberpruefen (punkte) {
         summe = summe + punkte;
     }
 }
+//Ergebnis ausrechnen
